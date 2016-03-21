@@ -1,0 +1,29 @@
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\bin\Debug\PhongKham.exe
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\bin\Debug\PhongKham.pdb
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.BacSi.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.CTHD.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.DichVu.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Form1.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.HoaDonDieuTri.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.KhachHang.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LichKham.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LoaiRang.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Properties.Resources.resources
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csproj.GenerateResource.Cache
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
+D:\study_tinatinh\năm 3\hk2 năm 3\lập trình cơ sở dữ liệu\PhongKham1\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\bin\Debug\PhongKham.exe
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\bin\Debug\PhongKham.pdb
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csprojResolveAssemblyReference.cache
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.BacSi.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.CTHD.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.DichVu.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Form1.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.HoaDonDieuTri.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.KhachHang.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LichKham.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LoaiRang.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Properties.Resources.resources
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csproj.GenerateResource.Cache
