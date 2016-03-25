@@ -52,7 +52,7 @@
     <Compile Include="BacSi.Designer.cs">
       <DependentUpon>BacSi.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClassBacSi.cs" />
+    <Compile Include="Class.cs" />
     <Compile Include="CTHD.cs">
       <SubType>Form</SubType>
     </Compile>
