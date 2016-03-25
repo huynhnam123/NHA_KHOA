@@ -15,7 +15,7 @@ namespace PhongKham
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BacSi());
+            Application.Run(new Main());
         }
     }
 }
