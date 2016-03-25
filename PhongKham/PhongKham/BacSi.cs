@@ -50,7 +50,7 @@ namespace PhongKham
             SqlCommand cmd = new SqlCommand(sql, _cn);
             connect();
             SqlDataReader dr = cmd.ExecuteReader();
-            List<ClassBacSi> list = new List<ClassBacSi>();
+            List<NhanVien> list = new List<NhanVien>();
             string maBS, tenBS, Dc, Dt, Ns, Gt;
             while (dr.Read())
             {
@@ -61,8 +61,8 @@ namespace PhongKham
                 Dc = dr.GetString(4);
                 Dt = dr.GetString(5);
 
-                ClassBacSi BS = new ClassBacSi(maBS, tenBS, Ns, Gt, Dc, Dt);
-                list.Add(BS);
+            //    NhanVien BS = new NhanVien(maBS, tenBS, Ns, Gt, Dc, Dt);
+             //   list.Add(BS);
             }
 
             dr.Close();
