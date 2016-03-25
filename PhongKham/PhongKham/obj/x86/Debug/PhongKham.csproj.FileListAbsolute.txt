@@ -27,3 +27,4 @@ F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LichKha
 F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LoaiRang.resources
 F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Properties.Resources.resources
 F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csproj.GenerateResource.Cache
+F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Main.resources
