@@ -1,0 +1,206 @@
+﻿IF DB_ID('NHAKHOA') IS NULL
+  CREATE DATABASE NHAKHOA
+USE [NHAKHOA]
+GO
+
+CREATE TABLE NHANVIEN(
+	MaNV nchar(4) 
+	,HoNV nvarchar(30) not null
+	,TenNV nvarchar(20) not null
+	,Ngaysinh datetime not null
+	,GioiTinh nchar(3) not null
+	,DiaChi nvarchar(50) not null 
+	,SDT nvarchar(11)
+	,ChucVu nvarchar(40) not null
+	,KinhNghiem nvarchar(15)
+	,NgayBatDauLam datetime not null
+	,MucLuong money
+	,PRIMARY KEY (MaNV)
+)
+CREATE TABLE BENHNHAN(
+	MaBN int 
+	,HoBN nvarchar(30) not null
+	,TenBN nvarchar(20)not null
+	,Ngaysinh datetime not null
+	,GioiTinh nchar(3) not null
+	,DiaChi nvarchar(50)
+	,SDT nvarchar(11) 
+	,PRIMARY KEY (MaBN)
+)
+CREATE TABLE HOADONDIEUTRI(
+	MaHD nchar(4) 
+	,MaNV nchar(4) 
+	,MaBN int
+	,NgayDT datetime
+	,PRIMARY KEY (MaHD)
+	,FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV)
+	,FOREIGN KEY (MaBN) REFERENCES BENHNHAN(MaBN)
+)
+CREATE TABLE LOAIDIEUTRI(
+	MaDT nchar(4) 
+	,TenDT nvarchar(100)  not null
+	,DonVi nchar(10) not null
+	,PhiDieuTri money 	
+	,PRIMARY KEY (MaDT)
+)
+	--CREATE TABLE LOAIRANG(
+	--	MaRang nchar(4) 
+	--	,Rang nvarchar(20)  not null
+	--	,DonGia money
+	--	,PRIMARY KEY (MaRang)
+	--)
+CREATE TABLE CHITET_HD_DIEUTRI(
+	MaCT nchar(4) 
+	,MaHD nchar(4) 
+	,MaDT nchar(4) 
+--	,MaRang nchar(4) 
+	,Soluong int	
+	,PRIMARY KEY (MaCT)
+	,FOREIGN KEY (MaHD) REFERENCES HOADONDIEUTRI(MaHD)
+	,FOREIGN KEY (MaDT) REFERENCES LOAIDIEUTRI(MaDT)
+--	,FOREIGN KEY (MaRang) REFERENCES LOAIRANG(MaRang)
+)
+
+CREATE TABLE LICHKHAM(
+	MaLich nchar(4) 
+	,NgayDT datetime  
+	,MaNV nchar(4) 
+	,MaBN int
+	,PRIMARY KEY (MaLich, NgayDT)
+	,FOREIGN KEY (MaNV) REFERENCES NHANVIEN(MaNV)
+	,FOREIGN KEY (MaBN) REFERENCES BENHNHAN(MaBN)
+)
+--	,FOREIGN KEY () REFERENCES ()
+INSERT INTO NHANVIEN
+VALUES ('TL01',N'Huỳnh Mĩ',N'Liên','1990/1/1',N'Nữ',N' 710 Hậu Giang','0934121212',N'Trợ lý','','2016/1/1',5000)
+INSERT INTO NHANVIEN
+VALUES ('BS01',N'Hoàng',N'Tiến','1980/10/12',N'Nam',N'320 Nguyễn Trãi','092125225',N'Nha sĩ','','2010/11/21',10000)
+INSERT INTO NHANVIEN
+VALUES ('BS02',N'Nguyễn Thị ',N'Loan','1988/3/3',N'Nữ',N'425 Lê Duẫn','0988123412',N'Nha sĩ','','2011/12/27',8000)
+INSERT INTO NHANVIEN
+VALUES ('PT01',N'Lê',N'Linh','1992/7/11',N'Nữ',N'288 Lý Thái Tổ','0909154112',N'Phú tá','','2010/9/10',7000)
+INSERT INTO NHANVIEN
+VALUES ('PT02',N'Đỗ',N'Bình','1989/9/15',N'Nam',N'231 Nguyễn Thị Nhỏ','0909246247',N'Phụ tá','','2012/1/1',6000)
+
+INSERT INTO BENHNHAN
+VALUES(1,N'Trần Thị Mĩ', N'Linh', '1994/2/4',N'Nữ', '200 Hậu Giang', '0948123524')
+INSERT INTO BENHNHAN
+VALUES(2,N'Nguyễn Văn', N'Chính', '1994/1/20',N'Nam', '20 Cao Thắng', '0914162689')
+INSERT INTO BENHNHAN
+VALUES(3,N'	Phan Thanh', N'Dư­ơng', '',N'Nam', '1 Hậu Giang', '0978178764')
+INSERT INTO BENHNHAN
+VALUES(4,N'Nguyễn Hữu', N'Dũng', '',N'Nam', '123 Lê Lai', '0979809204')
+INSERT INTO BENHNHAN
+VALUES(5,N'Vũ Thanh', N'Huyên', '',N'Nam', '12 Minh Phụng', '0905682529')
+
+--INSERT INTO LOAIRANG
+--VALUES('R01',N'Răng cửa giữa', 0)
+--INSERT INTO LOAIRANG
+--VALUES('R02', N'Răng cửa bên', 0)
+--INSERT INTO LOAIRANG
+--VALUES('R03', N'Răng nanh', 0)
+--INSERT INTO LOAIRANG
+--VALUES('R04', N'Răng tiền hàm 1', 0)
+--INSERT INTO LOAIRANG
+--VALUES('R05', N'Răng tiền hàm 2', 0)
+--INSERT INTO LOAIRANG
+--VALUES('R06', N'Răng hàm 1', 0)
+--INSERT INTO LOAIRANG
+--VALUES('R07', N'Răng hàm 2', 0)
+--INSERT INTO LOAIRANG
+--VALUES('D08', N'Răng hàm 3', 0)
+--INSERT INTO LOAIRANG
+--VALUES('R01',N'Răng cửa giữa', 0)
+--INSERT INTO LOAIRANG
+--VALUES('T01',N'Răng sứ', 1000)
+--INSERT INTO LOAIRANG
+--VALUES('T02',N'Răng sứ Titan', 2000)
+--INSERT INTO LOAIRANG
+--VALUES('T03',N'Răng toàn sứ Cercon', 4500)
+
+--Cấy ghép
+INSERT INTO LOAIDIEUTRI
+VALUES('CG01', N'Cấy ghép Hàn Quốc', N'Răng', 14000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CG02', N'Cấy ghép Pháp', N'Răng', 17000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CG03', N'Cấy ghép Mỹ', N'Răng',20000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CG04', N'Cấy ghép Nobel', N'Răng',24000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CG05', N'Cấy ghép Nobel Active', N'Răng',27000000)
+
+--PHỤC HÌNH RĂNG SỨ
+INSERT INTO LOAIDIEUTRI
+VALUES('PH01',N'Răng sứ kim loại ceramco III', N'Răng',1000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('PH02',N'Răng sứ Titan', N'Răng',2000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('PH03',N'Răng sứ Emax(Toàn sứ)', N'Răng',3500000)
+INSERT INTO LOAIDIEUTRI
+VALUES('PH04',N'Răng sứ Zirconia – Cercon/HT', N'Răng',4500000)
+INSERT INTO LOAIDIEUTRI
+VALUES('PH05',N'Mặt dán sứ (Laminate sứ)', N'Răng',5000000)
+
+--RĂNG THÁO LẮP
+INSERT INTO LOAIDIEUTRI
+VALUES('TL01',N'Răng xương (resine)', N'Răng', 300000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TL02',N'Răng Composite sứ', N'Răng', 500000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TL03',N'Hàm khung', N'Hàm',2000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TL04',N'Hàm liên kết', N'Hàm',8000000)
+
+--NHỔ RĂNG - TIỂU PHẪU
+INSERT INTO LOAIDIEUTRI
+VALUES('NR01',N'Nhổ răng thường', N'Răng', 300000)
+INSERT INTO LOAIDIEUTRI
+VALUES('NR02',N'Nhổ răng sữa', N'Răng',100000)
+INSERT INTO LOAIDIEUTRI
+VALUES('NR03',N'Nhổ răng khôn hàm trên', N'Răng',800000)
+INSERT INTO LOAIDIEUTRI
+VALUES('NR04',N'Nhổ răng khôn hàm dưới', N'Răng',1500000)
+
+
+--TẨY TRẮNG RĂNG
+INSERT INTO LOAIDIEUTRI
+VALUES('TT01',N'Tẩy trắng răng', N'Hàm', 1250000)
+
+--ĐIỀU TRỊ NHA CHU
+INSERT INTO LOAIDIEUTRI
+VALUES('NT01',N'Điều trị nha chu', N'Hàm', 100000)
+INSERT INTO LOAIDIEUTRI
+VALUES('NT02',N'Điều trị viêm nướu', N'Hàm',150000)
+INSERT INTO LOAIDIEUTRI
+VALUES('NT03',N'Điều trị viêm nướu trẻ em', N'Hàm',50000)
+
+--CHỈNH NHA
+INSERT INTO LOAIDIEUTRI
+VALUES('CR01',N'Niềng răng', N'Hàm',25000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CR02',N'Phẫu thuật hàm hô', N'Hàm',6000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CR03',N'Phẫu thuật chỉnh hình răng', N'Hàm',2000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CR04',N'Phẫu thuật tạo hình nướu', N'Hàm',20000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CR05',N'Cấy xương', N'Ống',8000000)
+INSERT INTO LOAIDIEUTRI
+VALUES('CR06',N'Hàm Trainer trẻ em', N'Hàm',5000000)
+
+--TRÁM RĂNG – CHỮA TỦY
+INSERT INTO LOAIDIEUTRI
+VALUES('TC01',N'Trám răng Composite', N'Răng',200000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TC02',N'Trám răng trẻ em', N'Răng',100000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TC03',N'Đính đá lên răng', N'Răng',300000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TC04',N'Đắp mặt', N'Răng',500000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TC05',N'Chữa tủy răng cửa', N'Răng',400000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TC06',N'Chữa tủy răng tiền cối', N'Răng',500000)
+INSERT INTO LOAIDIEUTRI
+VALUES('TC07',N'Chữa tủy răng cối lớn', N'Răng',700000)
