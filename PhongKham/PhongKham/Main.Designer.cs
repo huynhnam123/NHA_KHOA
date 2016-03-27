@@ -35,11 +35,11 @@
             this.DgvNhanVien = new System.Windows.Forms.DataGridView();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tp_AnhBiaBN = new System.Windows.Forms.TabPage();
-            this.bt_Thoat = new System.Windows.Forms.Button();
-            this.bt_Luu = new System.Windows.Forms.Button();
-            this.bt_Sua = new System.Windows.Forms.Button();
-            this.bt_Xoa = new System.Windows.Forms.Button();
-            this.bt_them = new System.Windows.Forms.Button();
+            this.bt_Thoat_benhnhan = new System.Windows.Forms.Button();
+            this.bt_Luu_benhnhan = new System.Windows.Forms.Button();
+            this.bt_Sua_benhnhan = new System.Windows.Forms.Button();
+            this.bt_Xoa_benhnhan = new System.Windows.Forms.Button();
+            this.bt_them_benhnhan = new System.Windows.Forms.Button();
             this.lb_GioiTinh = new System.Windows.Forms.Label();
             this.lb_DiaChi = new System.Windows.Forms.Label();
             this.lb_SDT = new System.Windows.Forms.Label();
@@ -125,13 +125,12 @@
             // 
             // tp_AnhBiaBN
             // 
-            this.tp_AnhBiaBN.BackgroundImage = global::PhongKham.Properties.Resources.anh_be_cuoi_dep_290x195;
             this.tp_AnhBiaBN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tp_AnhBiaBN.Controls.Add(this.bt_Thoat);
-            this.tp_AnhBiaBN.Controls.Add(this.bt_Luu);
-            this.tp_AnhBiaBN.Controls.Add(this.bt_Sua);
-            this.tp_AnhBiaBN.Controls.Add(this.bt_Xoa);
-            this.tp_AnhBiaBN.Controls.Add(this.bt_them);
+            this.tp_AnhBiaBN.Controls.Add(this.bt_Thoat_benhnhan);
+            this.tp_AnhBiaBN.Controls.Add(this.bt_Luu_benhnhan);
+            this.tp_AnhBiaBN.Controls.Add(this.bt_Sua_benhnhan);
+            this.tp_AnhBiaBN.Controls.Add(this.bt_Xoa_benhnhan);
+            this.tp_AnhBiaBN.Controls.Add(this.bt_them_benhnhan);
             this.tp_AnhBiaBN.Controls.Add(this.lb_GioiTinh);
             this.tp_AnhBiaBN.Controls.Add(this.lb_DiaChi);
             this.tp_AnhBiaBN.Controls.Add(this.lb_SDT);
@@ -160,56 +159,56 @@
             this.tp_AnhBiaBN.Text = "Bệnh nhân";
             this.tp_AnhBiaBN.UseVisualStyleBackColor = true;
             // 
-            // bt_Thoat
+            // bt_Thoat_benhnhan
             // 
-            this.bt_Thoat.Image = global::PhongKham.Properties.Resources._12047665_674658566007901_330066257_n1;
-            this.bt_Thoat.Location = new System.Drawing.Point(724, 299);
-            this.bt_Thoat.Name = "bt_Thoat";
-            this.bt_Thoat.Size = new System.Drawing.Size(69, 56);
-            this.bt_Thoat.TabIndex = 30;
-            this.bt_Thoat.UseVisualStyleBackColor = true;
-            this.bt_Thoat.Click += new System.EventHandler(this.bt_Thoat_Click);
+            this.bt_Thoat_benhnhan.Image = global::PhongKham.Properties.Resources._12047665_674658566007901_330066257_n1;
+            this.bt_Thoat_benhnhan.Location = new System.Drawing.Point(724, 299);
+            this.bt_Thoat_benhnhan.Name = "bt_Thoat_benhnhan";
+            this.bt_Thoat_benhnhan.Size = new System.Drawing.Size(69, 56);
+            this.bt_Thoat_benhnhan.TabIndex = 30;
+            this.bt_Thoat_benhnhan.UseVisualStyleBackColor = true;
+            this.bt_Thoat_benhnhan.Click += new System.EventHandler(this.bt_Thoat_benhnhan_Click);
             // 
-            // bt_Luu
+            // bt_Luu_benhnhan
             // 
-            this.bt_Luu.Image = global::PhongKham.Properties.Resources.save;
-            this.bt_Luu.Location = new System.Drawing.Point(601, 299);
-            this.bt_Luu.Name = "bt_Luu";
-            this.bt_Luu.Size = new System.Drawing.Size(69, 56);
-            this.bt_Luu.TabIndex = 27;
-            this.bt_Luu.UseVisualStyleBackColor = true;
-            this.bt_Luu.Click += new System.EventHandler(this.bt_Luu_Click);
+            this.bt_Luu_benhnhan.Image = global::PhongKham.Properties.Resources.save;
+            this.bt_Luu_benhnhan.Location = new System.Drawing.Point(601, 299);
+            this.bt_Luu_benhnhan.Name = "bt_Luu_benhnhan";
+            this.bt_Luu_benhnhan.Size = new System.Drawing.Size(69, 56);
+            this.bt_Luu_benhnhan.TabIndex = 27;
+            this.bt_Luu_benhnhan.UseVisualStyleBackColor = true;
+            this.bt_Luu_benhnhan.Click += new System.EventHandler(this.bt_Luu_benhnhan_Click);
             // 
-            // bt_Sua
+            // bt_Sua_benhnhan
             // 
-            this.bt_Sua.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bt_Sua.Image = global::PhongKham.Properties.Resources.suachua;
-            this.bt_Sua.Location = new System.Drawing.Point(482, 299);
-            this.bt_Sua.Name = "bt_Sua";
-            this.bt_Sua.Size = new System.Drawing.Size(68, 56);
-            this.bt_Sua.TabIndex = 26;
-            this.bt_Sua.UseVisualStyleBackColor = true;
-            this.bt_Sua.Click += new System.EventHandler(this.bt_Sua_Click);
+            this.bt_Sua_benhnhan.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.bt_Sua_benhnhan.Image = global::PhongKham.Properties.Resources.suachua;
+            this.bt_Sua_benhnhan.Location = new System.Drawing.Point(482, 299);
+            this.bt_Sua_benhnhan.Name = "bt_Sua_benhnhan";
+            this.bt_Sua_benhnhan.Size = new System.Drawing.Size(68, 56);
+            this.bt_Sua_benhnhan.TabIndex = 26;
+            this.bt_Sua_benhnhan.UseVisualStyleBackColor = true;
+            this.bt_Sua_benhnhan.Click += new System.EventHandler(this.bt_Sua_benhnhan_Click);
             // 
-            // bt_Xoa
+            // bt_Xoa_benhnhan
             // 
-            this.bt_Xoa.Image = global::PhongKham.Properties.Resources._12516407_674657942674630_991295884_n;
-            this.bt_Xoa.Location = new System.Drawing.Point(360, 299);
-            this.bt_Xoa.Name = "bt_Xoa";
-            this.bt_Xoa.Size = new System.Drawing.Size(69, 56);
-            this.bt_Xoa.TabIndex = 29;
-            this.bt_Xoa.UseVisualStyleBackColor = true;
-            this.bt_Xoa.Click += new System.EventHandler(this.bt_Xoa_Click);
+            this.bt_Xoa_benhnhan.Image = global::PhongKham.Properties.Resources._12516407_674657942674630_991295884_n;
+            this.bt_Xoa_benhnhan.Location = new System.Drawing.Point(360, 299);
+            this.bt_Xoa_benhnhan.Name = "bt_Xoa_benhnhan";
+            this.bt_Xoa_benhnhan.Size = new System.Drawing.Size(69, 56);
+            this.bt_Xoa_benhnhan.TabIndex = 29;
+            this.bt_Xoa_benhnhan.UseVisualStyleBackColor = true;
+            this.bt_Xoa_benhnhan.Click += new System.EventHandler(this.bt_Xoa_benhnhan_Click);
             // 
-            // bt_them
+            // bt_them_benhnhan
             // 
-            this.bt_them.Image = global::PhongKham.Properties.Resources._12833244_674657556008002_958393670_n;
-            this.bt_them.Location = new System.Drawing.Point(241, 299);
-            this.bt_them.Name = "bt_them";
-            this.bt_them.Size = new System.Drawing.Size(69, 56);
-            this.bt_them.TabIndex = 28;
-            this.bt_them.UseVisualStyleBackColor = true;
-            this.bt_them.Click += new System.EventHandler(this.bt_them_Click);
+            this.bt_them_benhnhan.Image = global::PhongKham.Properties.Resources._12833244_674657556008002_958393670_n;
+            this.bt_them_benhnhan.Location = new System.Drawing.Point(241, 299);
+            this.bt_them_benhnhan.Name = "bt_them_benhnhan";
+            this.bt_them_benhnhan.Size = new System.Drawing.Size(69, 56);
+            this.bt_them_benhnhan.TabIndex = 28;
+            this.bt_them_benhnhan.UseVisualStyleBackColor = true;
+            this.bt_them_benhnhan.Click += new System.EventHandler(this.bt_them_benhnhan_Click);
             // 
             // lb_GioiTinh
             // 
@@ -436,11 +435,11 @@
         private System.Windows.Forms.Button btBenhNhan;
         private System.Windows.Forms.Button btNhanVien;
         private System.Windows.Forms.TextBox txtDS_Count;
-        private System.Windows.Forms.Button bt_Thoat;
-        private System.Windows.Forms.Button bt_Luu;
-        private System.Windows.Forms.Button bt_Sua;
-        private System.Windows.Forms.Button bt_Xoa;
-        private System.Windows.Forms.Button bt_them;
+        private System.Windows.Forms.Button bt_Thoat_benhnhan;
+        private System.Windows.Forms.Button bt_Luu_benhnhan;
+        private System.Windows.Forms.Button bt_Sua_benhnhan;
+        private System.Windows.Forms.Button bt_Xoa_benhnhan;
+        private System.Windows.Forms.Button bt_them_benhnhan;
         private System.Windows.Forms.Label lb_GioiTinh;
         private System.Windows.Forms.Label lb_DiaChi;
         private System.Windows.Forms.Label lb_SDT;
