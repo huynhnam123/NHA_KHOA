@@ -16,8 +16,12 @@ namespace PhongKham
         //SqlConnection _cn;
         private SqlConnection _cn = new SqlConnection(_cnstr);
         private SqlDataAdapter _da;
-        private DataSet _ds;
+        private DataSet _ds = new DataSet();
+        int tb_count=0;
         private SqlCommandBuilder _cb;
+        string tabselected = "BENHNHAN";
+        int Cbt1 = 0, Cbt2 = 0, Cbt3 = 0, Cbt4 = 0, Cbt5 = 0, Cbt6 = 0, Cbt7 = 0;      
+        
         public Main()
         {
             InitializeComponent();
@@ -25,32 +29,63 @@ namespace PhongKham
 
         private void Main_Load(object sender, EventArgs e)
         {
-
-            LoadData();
+            
         }
    
         public void LoadData()
         {
-            const string str = @"SELECT * FROM NHANVIEN";
+            string str = @"SELECT * FROM "+ tabselected +"";                   
             try 
-	        {
+            {
                 _da = new SqlDataAdapter(str, _cn);
-                _cb = new SqlCommandBuilder(_da);
-                _ds = new DataSet();
-                _da.Fill(_ds);
+                _cb = new SqlCommandBuilder(_da);         
+                _ds.Tables.Add(tabselected);
+                _da.Fill(_ds, tabselected);
+                tb_count = _ds.Tables.Count;
+                txtDS_Count.Text = Convert.ToString(tb_count);           
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu:\n" + ex);
+              //  throw;
+            }
+        }      
 
-                //IF()-->
-                DGV.DataSource = _ds.Tables[0];
-	        }
-	        catch (Exception ex)
-	        {
-                MessageBox.Show("Lỗi tải dữ liệu " + ex);
-		        throw;
-	        }
+ 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Cbt1 == 0)
+            {
+                Cbt1 = 1;
+                tabselected = "NHANVIEN";
+                txtNhanVien.Text = tabselected;
+                LoadData();
+                DgvNhanVien.DataSource = _ds.Tables["NHANVIEN"];
+            }
+            else
+                DgvNhanVien.DataSource = _ds.Tables["NHANVIEN"];
         }
-      
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Cbt2 == 0)
+            {
+                Cbt2 = 1;
+                tabselected = "BENHNHAN";
+                txtBenhNhan.Text = tabselected;
+                LoadData();
+                DgvBenhNhan.DataSource = _ds.Tables["BENHNHAN"];
+            }
+            else
+                DgvBenhNhan.DataSource = _ds.Tables["BENHNHAN"];
+        }
+
+       
+            
     }
 }
+
 
 /*
 using System;
