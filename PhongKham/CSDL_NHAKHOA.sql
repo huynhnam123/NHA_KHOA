@@ -92,11 +92,11 @@ VALUES(1,N'Trần Thị Mĩ', N'Linh', '1994/2/4',N'Nữ', N'200 Hậu Giang', '
 INSERT INTO BENHNHAN
 VALUES(2,N'Nguyễn Văn', N'Chính', '1994/1/20',N'Nam', N'20 Cao Thắng', '0914162689')
 INSERT INTO BENHNHAN
-VALUES(3,N'	Phan Thanh', N'Dương', '1999/10/7',N'Nam', N'1 Hậu Giang', '0978178764')
+VALUES(3,N'	Phan Thanh', N'Dương', '',N'Nam', N'1 Hậu Giang', '0978178764')
 INSERT INTO BENHNHAN
-VALUES(4,N'Nguyễn Hữu', N'Dũng', '2000/4/1',N'Nam', N'123 Lê Lai', '0979809204')
+VALUES(4,N'Nguyễn Hữu', N'Dũng', '',N'Nam', N'123 Lê Lai', '0979809204')
 INSERT INTO BENHNHAN
-VALUES(5,N'Vũ Thanh', N'Huyền', '1980/5/4',N'Nam', N'12 Minh Phụng', '0905682529')
+VALUES(5,N'Vũ Thanh', N'Huyền', '',N'Nam', N'12 Minh Phụng', '0905682529')
 
 --INSERT INTO LOAIRANG
 --VALUES('R01',N'Răng cửa giữa', 0)

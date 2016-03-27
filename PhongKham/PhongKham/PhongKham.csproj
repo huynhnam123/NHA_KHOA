@@ -144,6 +144,24 @@
   <ItemGroup>
     <None Include="Resources\12047665_674658566007901_330066257_n.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suachua.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12047665_674658566007901_330066257_n1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rang-dep-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anh-be-cuoi-dep-290x195.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

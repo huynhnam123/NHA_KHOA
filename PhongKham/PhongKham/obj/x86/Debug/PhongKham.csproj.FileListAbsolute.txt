@@ -26,5 +26,21 @@ F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LichKha
 F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Properties.Resources.resources
 F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csproj.GenerateResource.Cache
 F:\Hoc Tap\NHA_KHOA\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Main.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\bin\Debug\PhongKham.exe
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\bin\Debug\PhongKham.pdb
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.CTHD.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.DichVu.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Form1.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.HoaDonDieuTri.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.KhachHang.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LichKham.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Main.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csproj.GenerateResource.Cache
+F:\Hoc Tap\NHA_KHOA - Copy\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
+F:\Hoc Tap\NHA_KHOA - Copy\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
 F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
 F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
