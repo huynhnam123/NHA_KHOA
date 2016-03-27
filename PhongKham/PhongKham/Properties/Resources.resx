@@ -121,13 +121,31 @@
   <data name="12833244_674657556008002_958393670_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12833244_674657556008002_958393670_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="suachua" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\suachua.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="12047665_674658566007901_330066257_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12047665_674658566007901_330066257_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="12047665_674658566007901_330066257_n1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12047665_674658566007901_330066257_n1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="12833438_674660016007756_1866328949_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12833438_674660016007756_1866328949_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rang-dep-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rang-dep-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="12516407_674657942674630_991295884_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12516407_674657942674630_991295884_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="12047665_674658566007901_330066257_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\12047665_674658566007901_330066257_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="anh-be-cuoi-dep-290x195" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anh-be-cuoi-dep-290x195.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
