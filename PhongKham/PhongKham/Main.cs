@@ -12,6 +12,61 @@ namespace PhongKham
 {
     public partial class Main : Form
     {
+        public const string _cnstr = "Server = .; Database = NHAKHOA; Integrated Security = true; User id = sa; password= 123123";
+        //SqlConnection _cn;
+        private SqlConnection _cn = new SqlConnection(_cnstr);
+        private SqlDataAdapter _da;
+        private DataSet _ds;
+        private SqlCommandBuilder _cb;
+        public Main()
+        {
+            InitializeComponent();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+            LoadData();
+        }
+   
+        public void LoadData()
+        {
+            const string str = @"SELECT * FROM NHANVIEN";
+            try 
+	        {
+                _da = new SqlDataAdapter(str, _cn);
+                _cb = new SqlCommandBuilder(_da);
+                _ds = new DataSet();
+                _da.Fill(_ds);
+
+                //IF()-->
+                DGV.DataSource = _ds.Tables[0];
+	        }
+	        catch (Exception ex)
+	        {
+                MessageBox.Show("Lỗi tải dữ liệu " + ex);
+		        throw;
+	        }
+        }
+      
+    }
+}
+
+/*
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+
+namespace PhongKham
+{
+    public partial class Main : Form
+    {
         const string _cnstr = "Server = .; Database = NHAKHOA; Integrated Security = true; User id = sa; password= 123123";
         //SqlConnection _cn;
         SqlConnection _cn = new SqlConnection(_cnstr);
@@ -56,7 +111,7 @@ namespace PhongKham
         {
             try
             {            
-                const string _str = @"SELECT * FROM NHANVIEN";
+                const string _str = @"SELECT * FROM NHANVIEN"; 
                 Connect();
                 SqlCommand _cmd = new SqlCommand(_str, _cn);
                 //_cmd.CommandType = CommandType.Text;
@@ -95,3 +150,4 @@ namespace PhongKham
       
     }
 }
+*/
