@@ -17,10 +17,10 @@ namespace PhongKham
         private SqlConnection _cn = new SqlConnection(_cnstr);
         private SqlDataAdapter _da;
         private DataSet _ds = new DataSet();
-        int tb_count = 0;
+      //  int tb_count = 0;
         private SqlCommandBuilder _cb;
-        string tabselected = "BENHNHAN";
-        int Cbt1 = 0, Cbt2 = 0, Cbt3 = 0, Cbt4 = 0, Cbt5 = 0, Cbt6 = 0, Cbt7 = 0;
+        string tabselected = "";
+        int Cbt1 = 0, Cbt2 = 0, Cbt3 = 0, Cbt4 = 0, Cbt5 = 0;
 
         public Main()
         {
@@ -29,7 +29,7 @@ namespace PhongKham
 
         private void Main_Load(object sender, EventArgs e)
         {
-            _cn.Open();
+        //    _cn.Open();
         }
 
         public void LoadData()
@@ -41,8 +41,7 @@ namespace PhongKham
                 _cb = new SqlCommandBuilder(_da);
                 _ds.Tables.Add(tabselected);
                 _da.Fill(_ds, tabselected);
-                tb_count = _ds.Tables.Count;
-                txtDS_Count.Text = Convert.ToString(tb_count);
+               // tb_count = _ds.Tables.Count;                
             }
             catch (Exception ex)
             {
@@ -53,46 +52,46 @@ namespace PhongKham
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btNhanVien_Click(object sender, EventArgs e)
         {
             if (Cbt1 == 0)
             {
                 Cbt1 = 1;
                 tabselected = "NHANVIEN";
-                txtNhanVien.Text = tabselected;
+                //txtNhanVien.Text = tabselected;
                 LoadData();
-                DgvNhanVien.DataSource = _ds.Tables["NHANVIEN"];
+                DgvNhanVien.DataSource = _ds.Tables[tabselected];
             }
             else
-                DgvNhanVien.DataSource = _ds.Tables["NHANVIEN"];
+                DgvNhanVien.DataSource = _ds.Tables[tabselected];
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btBenhNhan_Click(object sender, EventArgs e)
         {
             if (Cbt2 == 0)
             {
                 Cbt2 = 1;
                 tabselected = "BENHNHAN";
-                txtBenhNhan.Text = tabselected;
+              //  txtBenhNhan.Text = tabselected;
                 LoadData();
-                DgvBenhNhan.DataSource = _ds.Tables["BENHNHAN"];
+                DgvBenhNhan.DataSource = _ds.Tables[tabselected];
             }
             else
-                DgvBenhNhan.DataSource = _ds.Tables["BENHNHAN"];
+                DgvBenhNhan.DataSource = _ds.Tables[tabselected];
         }
 
-        private void bt_them_Click(object sender, EventArgs e)
+        private void bt_them_BenhNhan_Click(object sender, EventArgs e)
         {
             try
             {
-                DataRow dr = _ds.Tables[0].NewRow();
+                DataRow dr = _ds.Tables[tabselected].NewRow();
                 dr["MaBN"] = txt_MaBN.Text;
                 dr["HoBN"] = txt_HoBN.Text;
                 dr["TenBN"] = txt_TenBN.Text;
-                dr["Ngaysinh"] = txt_Ngaysinh.Text;
-                dr["GioiTinh"] = txt_GioiTinh.Text;
-                dr["DiaChi"] = txt_DiaChi.Text;
-                dr["SDT"] = txt_SDT.Text;
+                dr["Ngaysinh"] = txt_NgaysinhBN.Text;
+                dr["GioiTinh"] = txt_GioiTinhBN.Text;
+                dr["DiaChi"] = txt_DiaChiBN.Text;
+                dr["SDT"] = txt_SDTBN.Text;
                 _ds.Tables[0].Rows.Add(dr);
             }
             catch (DataException ex)
@@ -102,26 +101,25 @@ namespace PhongKham
             }
         }
 
-        private void bt_Xoa_Click(object sender, EventArgs e)
+        private void bt_Xoa_BenhNhan_Click(object sender, EventArgs e)
         {
             try
-            {
-                SqlConnection _cn = new SqlConnection(_cnstr);
-                _cn.Open();
-                int currenindex = DgvBenhNhan.CurrentCell.RowIndex;
-                string MaBN = Convert.ToString(DgvBenhNhan.Rows[currenindex].Cells[0].Value.ToString());
-                string dltStr = " Xoa Benh Nhan tu MaBN=' " + MaBN + " ' ";
-                SqlCommand dltCmd = new SqlCommand(dltStr, _cn);
-                dltCmd.CommandType = CommandType.Text;
-                dltCmd.ExecuteNonQuery();
-                _da.Update(_ds, "BENHNHAN");
-                LoadData();
-                MessageBox.Show("Bạn đã xóa thành công", "THÔNG BÁO", MessageBoxButtons.OK);
-                _cn.Close();
+            {                
+               int RowIndex =  DgvBenhNhan.CurrentRow.Index;
+               DataGridViewRow curRow = DgvBenhNhan.Rows[RowIndex];
+               DialogResult dialog = MessageBox.Show("Ban chac chan muon xoa MaKH: " + curRow.Cells[0].Value.ToString() +" ?", "Xoa hang:", MessageBoxButtons.YesNo);
+               if (dialog == DialogResult.Yes)
+               {
+                   if (DgvBenhNhan.Rows.Count > 0)
+                   {                        
+                       DgvBenhNhan.Rows.Remove(curRow);
+                   }
+               }           
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Loi~: them  " + ex.ToString());
+                //   throw;
             }
         }
 
@@ -132,69 +130,40 @@ namespace PhongKham
                 txt_MaBN.Text = DgvBenhNhan.CurrentRow.Cells["MaBN"].Value.ToString();
                 txt_HoBN.Text = DgvBenhNhan.CurrentRow.Cells["HoBN"].Value.ToString();
                 txt_TenBN.Text = DgvBenhNhan.CurrentRow.Cells["TenBN"].Value.ToString();
-                txt_Ngaysinh.Text = DgvBenhNhan.CurrentRow.Cells["Ngaysinh"].Value.ToString();
-                txt_GioiTinh.Text = DgvBenhNhan.CurrentRow.Cells["GioiTinh"].Value.ToString();
-                txt_DiaChi.Text = DgvBenhNhan.CurrentRow.Cells["DiaChi"].Value.ToString();
-                txt_SDT.Text = DgvBenhNhan.CurrentRow.Cells["SDT"].Value.ToString();
+                txt_NgaysinhBN.Text = DgvBenhNhan.CurrentRow.Cells["Ngaysinh"].Value.ToString();
+                txt_GioiTinhBN.Text = DgvBenhNhan.CurrentRow.Cells["GioiTinh"].Value.ToString();
+                txt_DiaChiBN.Text = DgvBenhNhan.CurrentRow.Cells["DiaChi"].Value.ToString();
+                txt_SDTBN.Text = DgvBenhNhan.CurrentRow.Cells["SDT"].Value.ToString();
             }
         }
-
-        private void bt_Thoat_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void bt_Luu_Click(object sender, EventArgs e)
+        private void bt_Luu_BenhNhan_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlConnection _cn = new SqlConnection(_cnstr);
-                _cn.Open();
-                int currentIndex = DgvBenhNhan.CurrentCell.RowIndex;
-                string MaBN = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string HoBN = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string TenBN = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string Ngaysinh = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string GioiTinh = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string DiaChi = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string SDT = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string insertStr = " Them vao benh nhan gia tri !'" + MaBN + "'.'" + HoBN + "'.'" + TenBN + "'.'" + Ngaysinh + "'.'" + GioiTinh + "'.'" + DiaChi + "'.'" + SDT + "')";
-                SqlCommand insertCmd = new SqlCommand(insertStr, _cn);
-                insertCmd.CommandType = CommandType.Text;
-                insertCmd.ExecuteNonQuery();
-                LoadData();
-                MessageBox.Show("Bạn đã lưu thành công ! ", "THÔNG BÁO", MessageBoxButtons.OK);
-                _cn.Close();
+                _da.Update(_ds.Tables[tabselected]);
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-
-        private void bt_Sua_Click(object sender, EventArgs e)
+        private void bt_Sua_BenhNhan_Click(object sender, EventArgs e)
         {
             try
             {
-                SqlConnection _cn = new SqlConnection(_cnstr);
-                _cn.Open();
-                int currentIndex = DgvBenhNhan.CurrentCell.RowIndex;
-                string MaBN = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string HoBN = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string TenBN = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string Ngaysinh = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string GioiTinh = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string DiaChi = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string SDT = Convert.ToString(DgvBenhNhan.Rows[currentIndex].Cells[0].Value.ToString());
-                string updateStr = " Sua thong tin benh nhan MaBN= '" + MaBN + "'.HoBN='" + HoBN + "'.TenBN='" + TenBN + "'.Ngaysinh='" + Ngaysinh + "'.GioiTinh='" + GioiTinh + "'.DiaChi='" + DiaChi + "'.SDT='" + SDT + "')";
-                SqlCommand updateCmd = new SqlCommand(updateStr, _cn);
-                updateCmd.CommandType = CommandType.Text;
-                updateCmd.ExecuteNonQuery();
-                LoadData();
-                MessageBox.Show("Bạn đã sửa thành công ! ", "THÔNG BÁO", MessageBoxButtons.OK);
-                _cn.Close();
+                foreach (DataRow dr in _ds.Tables[tabselected].Rows)
+                {
+                    if (dr[0].ToString() == txt_MaBN.Text.ToString())
+                    {
+                        dr[0] = Convert.ToInt32(txt_MaBN.Text.ToString());
+                        dr[1] = txt_HoBN.Text;
+                        dr[2] = txt_TenBN.Text;
+                        dr[3] = txt_NgaysinhBN.Text;
+                        dr[4] = txt_GioiTinhBN.Text;
+                        dr[5] = txt_DiaChiBN.Text;
+                        dr[6] = txt_SDTBN.Text;
+                    }
+                }
             }
             catch (SqlException ex)
             {
@@ -202,6 +171,8 @@ namespace PhongKham
             }
 
         }
+
+     
     }
 }
 
