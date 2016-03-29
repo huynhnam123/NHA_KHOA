@@ -44,17 +44,3 @@ F:\Hoc Tap\NHA_KHOA - Copy\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
 F:\Hoc Tap\NHA_KHOA - Copy\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
 F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
 F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\bin\Debug\PhongKham.exe
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\bin\Debug\PhongKham.pdb
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csprojResolveAssemblyReference.cache
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.CTHD.resources
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.DichVu.resources
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Form1.resources
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.HoaDonDieuTri.resources
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.KhachHang.resources
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LichKham.resources
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Main.resources
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Properties.Resources.resources
-F:\Hoc Tap\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csproj.GenerateResource.Cache
-C:\Users\Huang\Documents\GitHub\NHA_KHOA-1f5faa46540139fa69e90b89f4441538279af81b\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
-C:\Users\Huang\Documents\GitHub\NHA_KHOA-1f5faa46540139fa69e90b89f4441538279af81b\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
