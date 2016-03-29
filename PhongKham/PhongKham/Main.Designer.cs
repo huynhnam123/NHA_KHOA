@@ -21,7 +21,7 @@
         }
 
         #region Windows Form Designer generated code
-
+        
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -56,11 +56,33 @@
             this.txt_MaBN = new System.Windows.Forms.TextBox();
             this.btBenhNhan = new System.Windows.Forms.Button();
             this.DgvBenhNhan = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.DgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.txt_TenNV_HD = new System.Windows.Forms.TextBox();
+            this.txt_MaHD = new System.Windows.Forms.TextBox();
+            this.txt_NgayDT_HD = new System.Windows.Forms.TextBox();
+            this.txt_TenBN_HD = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.l = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bt_Sua_HD = new System.Windows.Forms.Button();
+            this.bt_Xoa_HD = new System.Windows.Forms.Button();
+            this.bt_Them_HD = new System.Windows.Forms.Button();
+            this.bt_DanhSach_HD = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvNhanVien)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tp_AnhBiaBN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBenhNhan)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvHoaDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -113,6 +135,7 @@
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tp_AnhBiaBN);
+            this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4);
@@ -167,7 +190,7 @@
             // bt_Sua_BenhNhan
             // 
             this.bt_Sua_BenhNhan.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.bt_Sua_BenhNhan.Location = new System.Drawing.Point(818, 83);
+            this.bt_Sua_BenhNhan.Location = new System.Drawing.Point(826, 83);
             this.bt_Sua_BenhNhan.Name = "bt_Sua_BenhNhan";
             this.bt_Sua_BenhNhan.Size = new System.Drawing.Size(80, 30);
             this.bt_Sua_BenhNhan.TabIndex = 26;
@@ -177,7 +200,7 @@
             // 
             // bt_Xoa_BenhNhan
             // 
-            this.bt_Xoa_BenhNhan.Location = new System.Drawing.Point(912, 83);
+            this.bt_Xoa_BenhNhan.Location = new System.Drawing.Point(826, 118);
             this.bt_Xoa_BenhNhan.Name = "bt_Xoa_BenhNhan";
             this.bt_Xoa_BenhNhan.Size = new System.Drawing.Size(80, 30);
             this.bt_Xoa_BenhNhan.TabIndex = 29;
@@ -187,7 +210,7 @@
             // 
             // bt_them_BenhNhan
             // 
-            this.bt_them_BenhNhan.Location = new System.Drawing.Point(912, 46);
+            this.bt_them_BenhNhan.Location = new System.Drawing.Point(826, 47);
             this.bt_them_BenhNhan.Name = "bt_them_BenhNhan";
             this.bt_them_BenhNhan.Size = new System.Drawing.Size(80, 30);
             this.bt_them_BenhNhan.TabIndex = 28;
@@ -367,6 +390,215 @@
             this.DgvBenhNhan.TabIndex = 0;
             this.DgvBenhNhan.SelectionChanged += new System.EventHandler(this.DgvBenhNhan_SelectionChanged);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.DgvHoaDon);
+            this.tabPage2.Controls.Add(this.txt_TenNV_HD);
+            this.tabPage2.Controls.Add(this.txt_MaHD);
+            this.tabPage2.Controls.Add(this.txt_NgayDT_HD);
+            this.tabPage2.Controls.Add(this.txt_TenBN_HD);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.l);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.bt_Sua_HD);
+            this.tabPage2.Controls.Add(this.bt_Xoa_HD);
+            this.tabPage2.Controls.Add(this.bt_Them_HD);
+            this.tabPage2.Controls.Add(this.bt_DanhSach_HD);
+            this.tabPage2.Location = new System.Drawing.Point(4, 28);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1176, 730);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Hóa đơn";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(580, 613);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 30);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "Lưu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.bt_Luu_BenhNhan_Click);
+            // 
+            // DgvHoaDon
+            // 
+            this.DgvHoaDon.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.DgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvHoaDon.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.DgvHoaDon.Location = new System.Drawing.Point(0, 302);
+            this.DgvHoaDon.Name = "DgvHoaDon";
+            this.DgvHoaDon.Size = new System.Drawing.Size(450, 300);
+            this.DgvHoaDon.TabIndex = 38;
+            this.DgvHoaDon.SelectionChanged += new System.EventHandler(this.DgvHoaDon_SelectionChanged);
+            // 
+            // txt_TenNV_HD
+            // 
+            this.txt_TenNV_HD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenNV_HD.Location = new System.Drawing.Point(501, 97);
+            this.txt_TenNV_HD.Name = "txt_TenNV_HD";
+            this.txt_TenNV_HD.Size = new System.Drawing.Size(307, 26);
+            this.txt_TenNV_HD.TabIndex = 34;
+            this.txt_TenNV_HD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_MaHD
+            // 
+            this.txt_MaHD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaHD.Location = new System.Drawing.Point(501, 66);
+            this.txt_MaHD.Name = "txt_MaHD";
+            this.txt_MaHD.Size = new System.Drawing.Size(307, 26);
+            this.txt_MaHD.TabIndex = 35;
+            this.txt_MaHD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_NgayDT_HD
+            // 
+            this.txt_NgayDT_HD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NgayDT_HD.Location = new System.Drawing.Point(503, 165);
+            this.txt_NgayDT_HD.Name = "txt_NgayDT_HD";
+            this.txt_NgayDT_HD.Size = new System.Drawing.Size(307, 26);
+            this.txt_NgayDT_HD.TabIndex = 36;
+            this.txt_NgayDT_HD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_TenBN_HD
+            // 
+            this.txt_TenBN_HD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenBN_HD.Location = new System.Drawing.Point(503, 136);
+            this.txt_TenBN_HD.Name = "txt_TenBN_HD";
+            this.txt_TenBN_HD.Size = new System.Drawing.Size(307, 26);
+            this.txt_TenBN_HD.TabIndex = 37;
+            this.txt_TenBN_HD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(367, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 23);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Ngày điều trị";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(367, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(140, 23);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Tên bệnh nhân";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(367, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 23);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Tên bác sĩ";
+            // 
+            // l
+            // 
+            this.l.AutoSize = true;
+            this.l.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l.ForeColor = System.Drawing.Color.Black;
+            this.l.Location = new System.Drawing.Point(367, 65);
+            this.l.Name = "l";
+            this.l.Size = new System.Drawing.Size(110, 23);
+            this.l.TabIndex = 33;
+            this.l.Text = "Mã hóa đơn";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(498, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 25);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Quản Lý Hóa Đơn";
+            // 
+            // bt_Sua_HD
+            // 
+            this.bt_Sua_HD.Location = new System.Drawing.Point(727, 211);
+            this.bt_Sua_HD.Name = "bt_Sua_HD";
+            this.bt_Sua_HD.Size = new System.Drawing.Size(104, 53);
+            this.bt_Sua_HD.TabIndex = 26;
+            this.bt_Sua_HD.Text = "Sửa";
+            this.bt_Sua_HD.UseVisualStyleBackColor = true;
+            // 
+            // bt_Xoa_HD
+            // 
+            this.bt_Xoa_HD.Location = new System.Drawing.Point(599, 211);
+            this.bt_Xoa_HD.Name = "bt_Xoa_HD";
+            this.bt_Xoa_HD.Size = new System.Drawing.Size(104, 53);
+            this.bt_Xoa_HD.TabIndex = 27;
+            this.bt_Xoa_HD.Text = "Xóa";
+            this.bt_Xoa_HD.UseVisualStyleBackColor = true;
+            // 
+            // bt_Them_HD
+            // 
+            this.bt_Them_HD.Location = new System.Drawing.Point(471, 211);
+            this.bt_Them_HD.Name = "bt_Them_HD";
+            this.bt_Them_HD.Size = new System.Drawing.Size(104, 53);
+            this.bt_Them_HD.TabIndex = 28;
+            this.bt_Them_HD.Text = "Thêm";
+            this.bt_Them_HD.UseVisualStyleBackColor = true;
+            // 
+            // bt_DanhSach_HD
+            // 
+            this.bt_DanhSach_HD.Location = new System.Drawing.Point(345, 211);
+            this.bt_DanhSach_HD.Name = "bt_DanhSach_HD";
+            this.bt_DanhSach_HD.Size = new System.Drawing.Size(104, 53);
+            this.bt_DanhSach_HD.TabIndex = 24;
+            this.bt_DanhSach_HD.Text = "Danh Sách";
+            this.bt_DanhSach_HD.UseVisualStyleBackColor = true;
+            this.bt_DanhSach_HD.Click += new System.EventHandler(this.bt_DanhSach_HD_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dataGridView1.Location = new System.Drawing.Point(471, 301);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(700, 300);
+            this.dataGridView1.TabIndex = 40;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(8, 267);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 23);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Danh sách hóa đơn";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(467, 267);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(143, 23);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Chi tiết hóa đơn";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -386,6 +618,10 @@
             this.tp_AnhBiaBN.ResumeLayout(false);
             this.tp_AnhBiaBN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBenhNhan)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvHoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,6 +655,25 @@
         private System.Windows.Forms.TextBox txt_HoBN;
         private System.Windows.Forms.TextBox txt_MaBN;
         private System.Windows.Forms.Button bt_Luu_NhanVien;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView DgvHoaDon;
+        private System.Windows.Forms.TextBox txt_TenNV_HD;
+        private System.Windows.Forms.TextBox txt_MaHD;
+        private System.Windows.Forms.TextBox txt_NgayDT_HD;
+        private System.Windows.Forms.TextBox txt_TenBN_HD;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label l;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button bt_Sua_HD;
+        private System.Windows.Forms.Button bt_Xoa_HD;
+        private System.Windows.Forms.Button bt_Them_HD;
+        private System.Windows.Forms.Button bt_DanhSach_HD;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
 
     }
 }
