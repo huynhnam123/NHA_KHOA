@@ -81,7 +81,7 @@ namespace PhongKham
                 DgvBenhNhan.DataSource = _ds.Tables["BENHNHAN"];
         }
 
-        private void bt_them_Click(object sender, EventArgs e)
+        private void bt_them_benhnhan_Click(object sender, EventArgs e)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace PhongKham
             }
         }
 
-        private void bt_Xoa_Click(object sender, EventArgs e)
+        private void bt_Xoa_benhnhan_Click(object sender, EventArgs e)
         {
             try
             {
@@ -139,12 +139,12 @@ namespace PhongKham
             }
         }
 
-        private void bt_Thoat_Click(object sender, EventArgs e)
+        private void bt_Thoat_benhnhan_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void bt_Luu_Click(object sender, EventArgs e)
+        private void bt_Luu_benhnhan_Click(object sender, EventArgs e)
         {
             try
             {
@@ -174,7 +174,7 @@ namespace PhongKham
 
 
 
-        private void bt_Sua_Click(object sender, EventArgs e)
+        private void bt_Sua_benhnhan_Click(object sender, EventArgs e)
         {
             try
             {
