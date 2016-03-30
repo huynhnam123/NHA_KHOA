@@ -79,6 +79,7 @@
             this.bt_Luu_LK = new System.Windows.Forms.Button();
             this.bt_DanhSach_LichKham = new System.Windows.Forms.Button();
             this.DgvLichKham = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvNhanVien)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -109,7 +110,7 @@
             // bt_Luu_NhanVien
             // 
             this.bt_Luu_NhanVien.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bt_Luu_NhanVien.Location = new System.Drawing.Point(580, 600);
+            this.bt_Luu_NhanVien.Location = new System.Drawing.Point(548, 600);
             this.bt_Luu_NhanVien.Name = "bt_Luu_NhanVien";
             this.bt_Luu_NhanVien.Size = new System.Drawing.Size(80, 30);
             this.bt_Luu_NhanVien.TabIndex = 28;
@@ -186,7 +187,7 @@
             // 
             // bt_Luu_BenhNhan
             // 
-            this.bt_Luu_BenhNhan.Location = new System.Drawing.Point(580, 600);
+            this.bt_Luu_BenhNhan.Location = new System.Drawing.Point(548, 600);
             this.bt_Luu_BenhNhan.Name = "bt_Luu_BenhNhan";
             this.bt_Luu_BenhNhan.Size = new System.Drawing.Size(80, 30);
             this.bt_Luu_BenhNhan.TabIndex = 27;
@@ -462,7 +463,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(580, 613);
+            this.button1.Location = new System.Drawing.Point(548, 613);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 30);
             this.button1.TabIndex = 39;
@@ -616,6 +617,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.bt_Luu_LK);
             this.tabPage3.Controls.Add(this.bt_DanhSach_LichKham);
             this.tabPage3.Controls.Add(this.DgvLichKham);
@@ -630,7 +632,7 @@
             // bt_Luu_LK
             // 
             this.bt_Luu_LK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.bt_Luu_LK.Location = new System.Drawing.Point(580, 600);
+            this.bt_Luu_LK.Location = new System.Drawing.Point(548, 600);
             this.bt_Luu_LK.Name = "bt_Luu_LK";
             this.bt_Luu_LK.Size = new System.Drawing.Size(80, 30);
             this.bt_Luu_LK.TabIndex = 31;
@@ -640,7 +642,7 @@
             // 
             // bt_DanhSach_LichKham
             // 
-            this.bt_DanhSach_LichKham.Location = new System.Drawing.Point(0, 0);
+            this.bt_DanhSach_LichKham.Location = new System.Drawing.Point(0, 6);
             this.bt_DanhSach_LichKham.Name = "bt_DanhSach_LichKham";
             this.bt_DanhSach_LichKham.Size = new System.Drawing.Size(100, 35);
             this.bt_DanhSach_LichKham.TabIndex = 30;
@@ -653,10 +655,21 @@
             this.DgvLichKham.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.DgvLichKham.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.DgvLichKham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvLichKham.Location = new System.Drawing.Point(0, 288);
+            this.DgvLichKham.Location = new System.Drawing.Point(-4, 94);
             this.DgvLichKham.Name = "DgvLichKham";
-            this.DgvLichKham.Size = new System.Drawing.Size(1184, 300);
+            this.DgvLichKham.Size = new System.Drawing.Size(1184, 455);
             this.DgvLichKham.TabIndex = 29;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(3, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(174, 23);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Danh sách hóa đơn";
             // 
             // Main
             // 
@@ -682,6 +695,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvHoaDon)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLichKham)).EndInit();
             this.ResumeLayout(false);
 
@@ -739,6 +753,7 @@
         private System.Windows.Forms.Button bt_Luu_LK;
         private System.Windows.Forms.Button bt_DanhSach_LichKham;
         private System.Windows.Forms.DataGridView DgvLichKham;
+        private System.Windows.Forms.Label label7;
 
     }
 }
