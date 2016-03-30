@@ -38,10 +38,20 @@ namespace PhongKham
                 _da = new SqlDataAdapter(str, _cn);
                 _cb = new SqlCommandBuilder(_da);
                 _ds.Tables.Add(tab);
-                _da.Fill(_ds, tab);               
-                DataColumn[] MyKey = new DataColumn[1];
-                MyKey[0] = _ds.Tables[tab].Columns[0];
-                _ds.Tables[tab].PrimaryKey = MyKey;
+                _da.Fill(_ds, tab);
+                if (tab == "LICHKHAM")
+                {
+                    DataColumn[] MyKey = new DataColumn[2];
+                    MyKey[0] = _ds.Tables[tab].Columns[0];
+                    MyKey[0] = _ds.Tables[tab].Columns[1];
+                    _ds.Tables[tab].PrimaryKey = MyKey;
+                }
+                else
+                {
+                    DataColumn[] MyKey = new DataColumn[1];
+                    MyKey[0] = _ds.Tables[tab].Columns[0];
+                    _ds.Tables[tab].PrimaryKey = MyKey;
+                }
 
             }
             catch (Exception ex)
@@ -101,6 +111,26 @@ namespace PhongKham
             else
                 DgvHoaDon.DataSource = _ds.Tables[tabselected];
         }
+        private void bt_DanhSach_LichKham_Click(object sender, EventArgs e)
+        {
+            tabselected = "LICHKHAM";
+            if (!_ds.Tables.Contains("LICHKHAM"))
+            {
+                LoadData(tabselected);
+
+                if (!_ds.Tables.Contains("NHANVIEN"))
+                {
+                    LoadData("NHANVIEN");
+                }
+                if (!_ds.Tables.Contains("BENHNHAN"))
+                {
+                    LoadData("BENHNHAN");                    
+                }               
+                DgvLichKham.DataSource = _ds.Tables[tabselected];
+            }
+            else
+                DgvLichKham.DataSource = _ds.Tables[tabselected];
+        }
         /// <summary>
         /// Them Data
         /// </summary>
@@ -118,7 +148,7 @@ namespace PhongKham
                 dr[4] = txt_GioiTinhBN.Text;
                 dr[5] = txt_DiaChiBN.Text;
                 dr[6] = txt_SDTBN.Text;
-                _ds.Tables[0].Rows.Add(dr);
+                _ds.Tables[tabselected].Rows.Add(dr);
             }
             catch (DataException ex)
             {
@@ -164,10 +194,11 @@ namespace PhongKham
                 txt_MaBN.Text = DgvBenhNhan.CurrentRow.Cells[0].Value.ToString();
                 txt_HoBN.Text = DgvBenhNhan.CurrentRow.Cells[1].Value.ToString();
                 txt_TenBN.Text = DgvBenhNhan.CurrentRow.Cells[2].Value.ToString();
-                txt_NgaysinhBN.Text = DgvBenhNhan.CurrentRow.Cells[3].Value.ToString();
+                txt_NgaysinhBN.Text = DgvBenhNhan.CurrentRow.Cells[3].Value.ToString();                
                 txt_GioiTinhBN.Text = DgvBenhNhan.CurrentRow.Cells[4].Value.ToString();
                 txt_DiaChiBN.Text = DgvBenhNhan.CurrentRow.Cells[5].Value.ToString();
                 txt_SDTBN.Text = DgvBenhNhan.CurrentRow.Cells[6].Value.ToString();
+                
             }
         }
         private void DgvHoaDon_SelectionChanged(object sender, EventArgs e)
@@ -205,9 +236,10 @@ namespace PhongKham
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);                
             }
         }
+        
         /// <summary>
         /// Sua DATA
         /// </summary>
@@ -237,6 +269,8 @@ namespace PhongKham
             }
 
         }
+
+       
 
        
     }
