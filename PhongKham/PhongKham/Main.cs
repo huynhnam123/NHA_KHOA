@@ -82,7 +82,7 @@ namespace PhongKham
         private void btBenhNhan_Click(object sender, EventArgs e)
         {
             tabselected = "BENHNHAN";
-            if (!_ds.Tables.Contains("BENHNHAN"))
+            if (_ds.Tables.Contains("BENHNHAN") == false)
             {                           
                 LoadData(tabselected);
                 DgvBenhNhan.DataSource = _ds.Tables[tabselected];
@@ -92,20 +92,24 @@ namespace PhongKham
         }
         private void bt_DanhSach_HD_Click(object sender, EventArgs e)
         {
-            tabselected = "HOADONDIEUTRI";             
-            if (!_ds.Tables.Contains("HOADONDIEUTRI"))
+            tabselected = "HOADONDIEUTRI";
+            if (_ds.Tables.Contains("HOADONDIEUTRI") == false)
             {              
                 LoadData(tabselected);
 
-                if (!_ds.Tables.Contains("NHANVIEN"))
+                if (_ds.Tables.Contains("NHANVIEN") == false)
                 {
                     LoadData("NHANVIEN");
                 }
-                if (!_ds.Tables.Contains("BENHNHAN"))
+                if (_ds.Tables.Contains("BENHNHAN") == false)
                 {
                     LoadData("BENHNHAN");
                 }
-
+                if (_ds.Tables.Contains("CHITET_HD_DIEUTRI") == false)
+                {
+                    LoadData("CHITET_HD_DIEUTRI");                  
+                    DgvCTHD.DataSource = _ds.Tables["CHITET_HD_DIEUTRI"];
+                }
                 DgvHoaDon.DataSource = _ds.Tables[tabselected];
             }
             else
@@ -114,22 +118,32 @@ namespace PhongKham
         private void bt_DanhSach_LichKham_Click(object sender, EventArgs e)
         {
             tabselected = "LICHKHAM";
-            if (!_ds.Tables.Contains("LICHKHAM"))
+            if (_ds.Tables.Contains("LICHKHAM") == false)
             {
                 LoadData(tabselected);
-
-                if (!_ds.Tables.Contains("NHANVIEN"))
+                if (_ds.Tables.Contains("NHANVIEN") == false)
                 {
                     LoadData("NHANVIEN");
                 }
-                if (!_ds.Tables.Contains("BENHNHAN"))
+                if (_ds.Tables.Contains("BENHNHAN") == false)
                 {
                     LoadData("BENHNHAN");                    
                 }               
-                DgvLichKham.DataSource = _ds.Tables[tabselected];
+                DgvLichKham.DataSource = _ds.Tables[tabselected];                
             }
             else
                 DgvLichKham.DataSource = _ds.Tables[tabselected];
+        }
+        private void bt_CTHD_HD_Click(object sender, EventArgs e)
+        {
+            tabselected = "CHITET_HD_DIEUTRI";
+            if (_ds.Tables.Contains(tabselected) == false)
+            {
+                LoadData(tabselected);
+                DgvCTHD.DataSource = _ds.Tables[tabselected];
+            }
+            else
+                DgvCTHD.DataSource = _ds.Tables[tabselected];
         }
         /// <summary>
         /// Them Data
@@ -164,7 +178,7 @@ namespace PhongKham
         private void bt_Xoa_BenhNhan_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {            
                int RowIndex =  DgvBenhNhan.CurrentRow.Index;
                DataGridViewRow curRow = DgvBenhNhan.Rows[RowIndex];
                DialogResult dialog = MessageBox.Show("Ban chac chan muon xoa MaKH: " + curRow.Cells[0].Value.ToString() +" ?", "Xoa hang:", MessageBoxButtons.YesNo);
@@ -267,12 +281,35 @@ namespace PhongKham
             {
                 MessageBox.Show(ex.Message);
             }
-
+        }
+        private void bt_Sua_HD_Click(object sender, EventArgs e)
+        {
+           
         }
 
-       
+        private void bt_Them_HD_Click(object sender, EventArgs e)
+        {
 
-       
+        }
+        //DS trong ngay
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (_ds.Tables.Contains(tabselected) == false)
+                bt_DanhSach_LichKham.PerformClick();
+            if (_ds.Tables.Contains("DSKHAMHIENTAI") == false)
+            { 
+                DateTime dt = DateTime.Now;
+                //DateTime dt2 = new DateTime(2016, 3, 30);               
+                SqlCommand sqlComm = new SqlCommand("DSKHAM_HIENTAI", _cn);
+                sqlComm.Parameters.AddWithValue("@date", dt);
+                sqlComm.CommandType = CommandType.StoredProcedure;               
+                _da.SelectCommand = sqlComm;
+                _da.Fill(_ds,"DSKHAMHIENTAI");
+                DgvLichKham.DataSource = _ds.Tables["DSKHAMHIENTAI"];
+            }
+            else
+                DgvLichKham.DataSource = _ds.Tables["DSKHAMHIENTAI"];
+        }
     }
 }
 
