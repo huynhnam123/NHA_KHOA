@@ -19,8 +19,7 @@ namespace PhongKham
         private DataSet _ds = new DataSet();
       //  int tb_count = 0;
         private SqlCommandBuilder _cb;
-        string tabselected = "";
-        int Cbt1 = 0, Cbt2 = 0, Cbt3 = 0, Cbt4 = 0, Cbt5 = 0;
+        string tabselected = "";      
 
         public Main()
         {
@@ -28,20 +27,32 @@ namespace PhongKham
         }
 
         private void Main_Load(object sender, EventArgs e)
-        {
-        //    _cn.Open();
+        {        
         }
 
-        public void LoadData()
+        public void LoadData(string tab)
         {
-            string str = @"SELECT * FROM " + tabselected + "";
+            string str = @"SELECT * FROM " + tab + "";
             try
             {
                 _da = new SqlDataAdapter(str, _cn);
                 _cb = new SqlCommandBuilder(_da);
-                _ds.Tables.Add(tabselected);
-                _da.Fill(_ds, tabselected);
-               // tb_count = _ds.Tables.Count;                
+                _ds.Tables.Add(tab);
+                _da.Fill(_ds, tab);
+                if (tab == "LICHKHAM")
+                {
+                    DataColumn[] MyKey = new DataColumn[2];
+                    MyKey[0] = _ds.Tables[tab].Columns[0];
+                    MyKey[0] = _ds.Tables[tab].Columns[1];
+                    _ds.Tables[tab].PrimaryKey = MyKey;
+                }
+                else
+                {
+                    DataColumn[] MyKey = new DataColumn[1];
+                    MyKey[0] = _ds.Tables[tab].Columns[0];
+                    _ds.Tables[tab].PrimaryKey = MyKey;
+                }
+
             }
             catch (Exception ex)
             {
@@ -51,15 +62,17 @@ namespace PhongKham
         }
 
 
-
+        /// <summary>
+        /// LoadData
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btNhanVien_Click(object sender, EventArgs e)
         {
-            if (Cbt1 == 0)
-            {
-                Cbt1 = 1;
-                tabselected = "NHANVIEN";
-                //txtNhanVien.Text = tabselected;
-                LoadData();
+            tabselected = "NHANVIEN";             
+            if (_ds.Tables.Contains("NHANVIEN") == false)
+            {                
+                LoadData(tabselected);
                 DgvNhanVien.DataSource = _ds.Tables[tabselected];
             }
             else
@@ -68,31 +81,74 @@ namespace PhongKham
 
         private void btBenhNhan_Click(object sender, EventArgs e)
         {
-            if (Cbt2 == 0)
-            {
-                Cbt2 = 1;
-                tabselected = "BENHNHAN";
-              //  txtBenhNhan.Text = tabselected;
-                LoadData();
+            tabselected = "BENHNHAN";
+            if (!_ds.Tables.Contains("BENHNHAN"))
+            {                           
+                LoadData(tabselected);
                 DgvBenhNhan.DataSource = _ds.Tables[tabselected];
             }
             else
                 DgvBenhNhan.DataSource = _ds.Tables[tabselected];
         }
+        private void bt_DanhSach_HD_Click(object sender, EventArgs e)
+        {
+            tabselected = "HOADONDIEUTRI";             
+            if (!_ds.Tables.Contains("HOADONDIEUTRI"))
+            {              
+                LoadData(tabselected);
 
+                if (!_ds.Tables.Contains("NHANVIEN"))
+                {
+                    LoadData("NHANVIEN");
+                }
+                if (!_ds.Tables.Contains("BENHNHAN"))
+                {
+                    LoadData("BENHNHAN");
+                }
+
+                DgvHoaDon.DataSource = _ds.Tables[tabselected];
+            }
+            else
+                DgvHoaDon.DataSource = _ds.Tables[tabselected];
+        }
+        private void bt_DanhSach_LichKham_Click(object sender, EventArgs e)
+        {
+            tabselected = "LICHKHAM";
+            if (!_ds.Tables.Contains("LICHKHAM"))
+            {
+                LoadData(tabselected);
+
+                if (!_ds.Tables.Contains("NHANVIEN"))
+                {
+                    LoadData("NHANVIEN");
+                }
+                if (!_ds.Tables.Contains("BENHNHAN"))
+                {
+                    LoadData("BENHNHAN");                    
+                }               
+                DgvLichKham.DataSource = _ds.Tables[tabselected];
+            }
+            else
+                DgvLichKham.DataSource = _ds.Tables[tabselected];
+        }
+        /// <summary>
+        /// Them Data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bt_them_BenhNhan_Click(object sender, EventArgs e)
         {
             try
             {
                 DataRow dr = _ds.Tables[tabselected].NewRow();
-                dr["MaBN"] = txt_MaBN.Text;
-                dr["HoBN"] = txt_HoBN.Text;
-                dr["TenBN"] = txt_TenBN.Text;
-                dr["Ngaysinh"] = txt_NgaysinhBN.Text;
-                dr["GioiTinh"] = txt_GioiTinhBN.Text;
-                dr["DiaChi"] = txt_DiaChiBN.Text;
-                dr["SDT"] = txt_SDTBN.Text;
-                _ds.Tables[0].Rows.Add(dr);
+                dr[0] = txt_MaBN.Text;
+                dr[1] = txt_HoBN.Text;
+                dr[2] = txt_TenBN.Text;
+                dr[3] = txt_NgaysinhBN.Text;
+                dr[4] = txt_GioiTinhBN.Text;
+                dr[5] = txt_DiaChiBN.Text;
+                dr[6] = txt_SDTBN.Text;
+                _ds.Tables[tabselected].Rows.Add(dr);
             }
             catch (DataException ex)
             {
@@ -100,7 +156,11 @@ namespace PhongKham
                 throw;
             }
         }
-
+        /// <summary>
+        /// Xoa data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bt_Xoa_BenhNhan_Click(object sender, EventArgs e)
         {
             try
@@ -122,31 +182,69 @@ namespace PhongKham
                 //   throw;
             }
         }
-
+        /// <summary>
+        /// DGV selectionchanged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DgvBenhNhan_SelectionChanged(object sender, EventArgs e)
         {
             if (DgvBenhNhan.CurrentRow != null)
             {
-                txt_MaBN.Text = DgvBenhNhan.CurrentRow.Cells["MaBN"].Value.ToString();
-                txt_HoBN.Text = DgvBenhNhan.CurrentRow.Cells["HoBN"].Value.ToString();
-                txt_TenBN.Text = DgvBenhNhan.CurrentRow.Cells["TenBN"].Value.ToString();
-                txt_NgaysinhBN.Text = DgvBenhNhan.CurrentRow.Cells["Ngaysinh"].Value.ToString();
-                txt_GioiTinhBN.Text = DgvBenhNhan.CurrentRow.Cells["GioiTinh"].Value.ToString();
-                txt_DiaChiBN.Text = DgvBenhNhan.CurrentRow.Cells["DiaChi"].Value.ToString();
-                txt_SDTBN.Text = DgvBenhNhan.CurrentRow.Cells["SDT"].Value.ToString();
+                txt_MaBN.Text = DgvBenhNhan.CurrentRow.Cells[0].Value.ToString();
+                txt_HoBN.Text = DgvBenhNhan.CurrentRow.Cells[1].Value.ToString();
+                txt_TenBN.Text = DgvBenhNhan.CurrentRow.Cells[2].Value.ToString();
+                txt_NgaysinhBN.Text = DgvBenhNhan.CurrentRow.Cells[3].Value.ToString();                
+                txt_GioiTinhBN.Text = DgvBenhNhan.CurrentRow.Cells[4].Value.ToString();
+                txt_DiaChiBN.Text = DgvBenhNhan.CurrentRow.Cells[5].Value.ToString();
+                txt_SDTBN.Text = DgvBenhNhan.CurrentRow.Cells[6].Value.ToString();
+                
             }
         }
+        private void DgvHoaDon_SelectionChanged(object sender, EventArgs e)
+        {
+            if(DgvHoaDon.CurrentRow != null)
+            {   
+                string sNV = DgvHoaDon.CurrentRow.Cells["MaNV"].Value.ToString();
+                DataRow foundRowNV = _ds.Tables["NHANVIEN"].Rows.Find(sNV);
+                string sBN = DgvHoaDon.CurrentRow.Cells["MaBN"].Value.ToString();
+                DataRow foundRowBN = _ds.Tables["BENHNHAN"].Rows.Find(sBN);
+                
+                txt_MaHD.Text = DgvHoaDon.CurrentRow.Cells["MaHD"].Value.ToString();
+                txt_TenNV_HD.Text = foundRowNV[1].ToString() + " " + foundRowNV[2].ToString();
+                txt_TenBN_HD.Text = foundRowBN[1].ToString() + " " + foundRowBN[2].ToString();
+                txt_NgayDT_HD.Text = DgvHoaDon.CurrentRow.Cells["NgayDT"].Value.ToString();
+            }
+        }    
+        /// <summary>
+        /// Luu DATA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bt_Luu_BenhNhan_Click(object sender, EventArgs e)
         {
             try
             {
-                _da.Update(_ds.Tables[tabselected]);
+                if (tabselected != "")
+                { 
+                    DialogResult rs = MessageBox.Show("Bạn có muốn lưu?", "Lưu", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                    if (rs == DialogResult.Yes)
+                    {
+                        _da.Update(_ds.Tables[tabselected]);
+                    }                    
+                 }
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);                
             }
         }
+        
+        /// <summary>
+        /// Sua DATA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bt_Sua_BenhNhan_Click(object sender, EventArgs e)
         {
             try
@@ -172,107 +270,10 @@ namespace PhongKham
 
         }
 
-     
+       
+
+       
     }
 }
 
 
-/*
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-
-namespace PhongKham
-{
-    public partial class Main : Form
-    {
-        const string _cnstr = "Server = .; Database = NHAKHOA; Integrated Security = true; User id = sa; password= 123123";
-        //SqlConnection _cn;
-        SqlConnection _cn = new SqlConnection(_cnstr);
-        public Main()
-        {
-            InitializeComponent();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            Connect();
-            LoadData();
-            Disconnect();
-        }
-        private void Connect()
-        {
-            try
-            {
-                if (_cn.State == ConnectionState.Closed)
-                    _cn.Open();                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi mở kết nối " + ex);
-                //throw;
-            }
-        }
-        private void Disconnect()
-        {
-            try
-            {
-                if (_cn.State == ConnectionState.Open)
-                    _cn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi đóng kết nối " + ex);
-                //throw;
-            }
-        }
-        public void LoadData()
-        {
-            try
-            {            
-                const string _str = @"SELECT * FROM NHANVIEN"; 
-                Connect();
-                SqlCommand _cmd = new SqlCommand(_str, _cn);
-                //_cmd.CommandType = CommandType.Text;
-                SqlDataReader _rd = _cmd.ExecuteReader();
-                string _maNV, _hoNV ,_tenNV, _gtNV,_dcNV ,_dtNV,_cvNV, _knNV;
-                DateTime _nsNV, _nbdlNV;
-                decimal _mlNV;
-               List<NhanVien> list = new List<NhanVien>();
-                while (_rd.Read())
-                {                
-                   _maNV = _rd.GetString(0);
-                   _hoNV = _rd.GetString(1);
-                   _tenNV =_rd.GetString(2);
-                   _nsNV = _rd.GetDateTime(3);
-                   _gtNV = _rd.GetString(4);
-                   _dcNV = _rd.GetString(5);           
-                   _dtNV = _rd.GetString(6);
-                   _cvNV = _rd.GetString(7);
-                   _knNV = _rd.GetString(8);
-                   _nbdlNV = _rd.GetDateTime(9);
-                   _mlNV = _rd.GetDecimal(10);
-                  NhanVien NV = new NhanVien(_maNV, _hoNV, _tenNV, _nsNV, _gtNV, _dcNV, _dtNV, _cvNV, _knNV, _nbdlNV, _mlNV);
-                  list.Add(NV);
-                }
-                _rd.Close();
-                DGV.DataSource = list;
-                Disconnect();        
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi" + ex);
-                throw;
-            }
-        }
-      
-    }
-}
-*/

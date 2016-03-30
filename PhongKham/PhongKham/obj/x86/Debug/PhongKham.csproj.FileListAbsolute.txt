@@ -60,3 +60,15 @@ C:\Users\Huang\Documents\GitHub\NHA_KHOA-1f5faa46540139fa69e90b89f4441538279af81
 C:\Users\Huang\Documents\GitHub\NHA_KHOA-1f5faa46540139fa69e90b89f4441538279af81b\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
 C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
 C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\bin\Debug\PhongKham.exe
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\bin\Debug\PhongKham.pdb
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csprojResolveAssemblyReference.cache
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.CTHD.resources
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.DichVu.resources
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Form1.resources
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.HoaDonDieuTri.resources
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.KhachHang.resources
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.LichKham.resources
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Main.resources
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Properties.Resources.resources
+C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csproj.GenerateResource.Cache
