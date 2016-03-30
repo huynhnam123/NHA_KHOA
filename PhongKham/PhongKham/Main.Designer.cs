@@ -57,9 +57,10 @@
             this.btBenhNhan = new System.Windows.Forms.Button();
             this.DgvBenhNhan = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.bt_CTHD_HD = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvCTHD = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.DgvHoaDon = new System.Windows.Forms.DataGridView();
             this.txt_TenNV_HD = new System.Windows.Forms.TextBox();
@@ -76,17 +77,18 @@
             this.bt_Them_HD = new System.Windows.Forms.Button();
             this.bt_DanhSach_HD = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
             this.bt_Luu_LK = new System.Windows.Forms.Button();
             this.bt_DanhSach_LichKham = new System.Windows.Forms.Button();
             this.DgvLichKham = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvNhanVien)).BeginInit();
             this.tabControl.SuspendLayout();
             this.tp_AnhBiaBN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvBenhNhan)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCTHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvHoaDon)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLichKham)).BeginInit();
@@ -403,9 +405,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.bt_CTHD_HD);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.DgvCTHD);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.DgvHoaDon);
             this.tabPage2.Controls.Add(this.txt_TenNV_HD);
@@ -429,6 +432,17 @@
             this.tabPage2.Text = "Hóa đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // bt_CTHD_HD
+            // 
+            this.bt_CTHD_HD.Location = new System.Drawing.Point(862, 199);
+            this.bt_CTHD_HD.Name = "bt_CTHD_HD";
+            this.bt_CTHD_HD.Size = new System.Drawing.Size(104, 53);
+            this.bt_CTHD_HD.TabIndex = 43;
+            this.bt_CTHD_HD.Text = "LOAD";
+            this.bt_CTHD_HD.UseVisualStyleBackColor = true;
+            this.bt_CTHD_HD.Visible = false;
+            this.bt_CTHD_HD.Click += new System.EventHandler(this.bt_CTHD_HD_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -451,15 +465,15 @@
             this.label2.TabIndex = 41;
             this.label2.Text = "Danh sách hóa đơn";
             // 
-            // dataGridView1
+            // DgvCTHD
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dataGridView1.Location = new System.Drawing.Point(471, 301);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(700, 300);
-            this.dataGridView1.TabIndex = 40;
+            this.DgvCTHD.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.DgvCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvCTHD.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.DgvCTHD.Location = new System.Drawing.Point(471, 301);
+            this.DgvCTHD.Name = "DgvCTHD";
+            this.DgvCTHD.Size = new System.Drawing.Size(700, 300);
+            this.DgvCTHD.TabIndex = 40;
             // 
             // button1
             // 
@@ -586,6 +600,7 @@
             this.bt_Sua_HD.TabIndex = 26;
             this.bt_Sua_HD.Text = "Sửa";
             this.bt_Sua_HD.UseVisualStyleBackColor = true;
+            this.bt_Sua_HD.Click += new System.EventHandler(this.bt_Sua_HD_Click);
             // 
             // bt_Xoa_HD
             // 
@@ -604,6 +619,7 @@
             this.bt_Them_HD.TabIndex = 28;
             this.bt_Them_HD.Text = "Thêm";
             this.bt_Them_HD.UseVisualStyleBackColor = true;
+            this.bt_Them_HD.Click += new System.EventHandler(this.bt_Them_HD_Click);
             // 
             // bt_DanhSach_HD
             // 
@@ -617,6 +633,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.bt_Luu_LK);
             this.tabPage3.Controls.Add(this.bt_DanhSach_LichKham);
@@ -628,6 +645,17 @@
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Lịch khám";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(3, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 23);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "Danh sách:";
             // 
             // bt_Luu_LK
             // 
@@ -644,9 +672,9 @@
             // 
             this.bt_DanhSach_LichKham.Location = new System.Drawing.Point(0, 6);
             this.bt_DanhSach_LichKham.Name = "bt_DanhSach_LichKham";
-            this.bt_DanhSach_LichKham.Size = new System.Drawing.Size(100, 35);
+            this.bt_DanhSach_LichKham.Size = new System.Drawing.Size(177, 35);
             this.bt_DanhSach_LichKham.TabIndex = 30;
-            this.bt_DanhSach_LichKham.Text = "Danh sách";
+            this.bt_DanhSach_LichKham.Text = "Danh sách lịch khám";
             this.bt_DanhSach_LichKham.UseVisualStyleBackColor = true;
             this.bt_DanhSach_LichKham.Click += new System.EventHandler(this.bt_DanhSach_LichKham_Click);
             // 
@@ -660,16 +688,15 @@
             this.DgvLichKham.Size = new System.Drawing.Size(1184, 455);
             this.DgvLichKham.TabIndex = 29;
             // 
-            // label7
+            // button2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(3, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(174, 23);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "Danh sách hóa đơn";
+            this.button2.Location = new System.Drawing.Point(183, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(177, 35);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "Danh sách trong ngày";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Main
             // 
@@ -692,7 +719,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvBenhNhan)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvCTHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvHoaDon)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
@@ -746,7 +773,7 @@
         private System.Windows.Forms.Button bt_Them_HD;
         private System.Windows.Forms.Button bt_DanhSach_HD;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvCTHD;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -754,6 +781,8 @@
         private System.Windows.Forms.Button bt_DanhSach_LichKham;
         private System.Windows.Forms.DataGridView DgvLichKham;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button bt_CTHD_HD;
+        private System.Windows.Forms.Button button2;
 
     }
 }
