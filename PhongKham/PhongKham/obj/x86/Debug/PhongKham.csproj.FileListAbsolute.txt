@@ -72,3 +72,5 @@ C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\Phong
 C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Main.resources
 C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.Properties.Resources.resources
 C:\Users\Huang\Documents\GitHub\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\NHA_KHOA-master\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.exe
+C:\Users\User\Documents\GitHub\NHA_KHOA-master\NHA_KHOA\PhongKham\PhongKham\obj\x86\Debug\PhongKham.pdb
